@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9a7103f1-e004-4f1b-98bd-02f2f19c76f6" name="Wom" url="https://womuscle.com">
+        <fileTransfer rootFolder="/var/www/womuscle.com/html/assets" accessType="SFTP" host="176.57.215.214" port="22" sshConfigId="0514850a-5899-4001-b25d-684395e6219e" sshConfig="redvus@176.57.215.214:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

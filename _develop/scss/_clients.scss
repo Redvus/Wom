@@ -1,0 +1,417 @@
+/*! @group Card Clients */
+/* ========================================================================== */
+.clients-content {
+    @include outer-container(900px);
+
+    h1 {
+        font: {
+            size: $font-size-h3;
+            weight: 400;
+        };
+        color: $primary;
+        margin: 0 0 2rem;
+        padding: 1rem;
+        background-color: $third;
+        //border-top: 1px solid $secondary;
+        //border-bottom: 1px solid $secondary;
+    }
+
+    @include media($XSmall) {
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+.search-content {
+    h1 {
+        background-color: $third;
+    }
+
+    @include media($XSmall) {
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+.clients-card {
+    width: 100%;
+    min-height: 10rem;
+    background-color: $third;
+    display: block;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 0 1rem 0.5rem;
+
+    &__head {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .clients-title {
+            width: 70%;
+            min-height: 1rem;
+            display: flex;
+            align-items: center;
+            //justify-content: center;
+            position: relative;
+
+            h4 {
+                font-size: $font-size-h5;
+                color: $primary;
+                position: relative;
+                line-height: 1.2;
+            }
+        }
+
+        .clients-web {
+            width: 30%;
+            min-height: 1rem;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            //justify-content: center;
+            position: relative;
+
+            a {
+                font: {
+                    family: $heading-font;
+                    size: $font-size-large;
+                    weight: 400;
+                };
+                line-height: 1.2;
+                color: $primary;
+                text-transform: lowercase;
+                position: relative;
+                margin: 0.5rem 0;
+                float: right;
+                transition: color 0.3s;
+
+                &:hover {
+                    // color: $secondary;
+                }
+            }
+        }
+
+        @include media($XSmall) {
+            flex-direction: column;
+
+            .clients-title {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+
+                h4 {
+                    margin-bottom: 0;
+                }
+            }
+
+            .clients-web {
+                width: 100%;
+                //float: left;
+                position: relative;
+                flex-direction: row;
+                text-align: center;
+                justify-content: center;
+
+                a {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        @include media($Small) {
+            .clients-web {
+                a {
+                    font-size: $font-size-h4;
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+
+        .clients-logo {
+            width: 20%;
+            min-height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0.5rem 0 0.5rem 2rem;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .clients-text {
+            width: 80%;
+            min-height: 2rem;
+            display: flex;
+            flex-direction: column;
+            //align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 1rem 2rem;
+
+            p {
+                color: $primary;
+                position: relative;
+                margin: 0.5rem 0;
+            }
+
+            ul {
+                margin-left: -1.3rem;
+
+                li {
+                    list-style: disc;
+                }
+            }
+        }
+
+        @include media($XSmall) {
+            flex-direction: column;
+
+            .clients-logo {
+                width: 60%;
+                margin: auto;
+            }
+
+            .clients-text {
+                width: 100%;
+            }
+        }
+
+        @include media($Small) {
+            .clients-logo {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .clients-text {
+                padding: 1rem;
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .footer-adress-block {
+            display: flex;
+            flex-direction: row;
+
+            .clients-adress {
+                width: 70%;
+                //min-height: 1rem;
+                display: flex;
+                align-items: center;
+                //justify-content: center;
+                position: relative;
+
+                p {
+                    font: {
+                        family: $heading-font;
+                        size: $font-size-large;
+                        weight: 400;
+                    };
+                    line-height: 1.2;
+                    color: $primary;
+                    margin: 0.5rem 0;
+                }
+            }
+
+            .clients-email {
+                width: 30%;
+                //min-height: 1rem;
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                //justify-content: center;
+                position: relative;
+
+                a {
+                    font: {
+                        family: $heading-font;
+                        size: $font-size-large;
+                        weight: 400;
+                    };
+                    line-height: 1.2;
+                    color: $primary;
+                    text-transform: lowercase;
+                    position: relative;
+                    margin: 0.5rem 0;
+                    float: right;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        // color: $secondary;
+                    }
+                }
+            }
+        }
+
+        .clients-phone {
+            width: 100%;
+            //min-height: 1rem;
+            display: block;
+            //align-items: center;
+            //flex-direction: row-reverse;
+            //justify-content: center;
+            position: relative;
+            text-align: left;
+
+            a {
+                font: {
+                    family: $heading-font;
+                    size: $font-size-h5;
+                    weight: 400;
+                };
+                line-height: 1.2;
+                color: $primary;
+                text-transform: lowercase;
+                position: relative;
+                margin: 0.5rem 1rem 0.5rem 0;
+                display: block;
+                float: left;
+
+                &:hover {
+                    // color: $secondary;
+                }
+            }
+        }
+
+        @include media($XSmall) {
+            flex-direction: column;
+
+            .footer-adress-block {
+                flex-direction: column;
+
+                .clients-adress {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+
+                    p {
+                        margin-top: 1rem;
+                    }
+                }
+
+                .clients-email {
+                    width: 100%;
+                    //float: left;
+                    position: relative;
+                    flex-direction: row;
+                    text-align: center;
+                    justify-content: center;
+                }
+            }
+
+            .clients-phone {
+                width: 100%;
+                text-align: left;
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+
+                a {
+                    float: none;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @include media($Small) {
+            .footer-adress-block {
+
+                .clients-adress {
+                    p {
+                        font-size: $font-size-h4;
+                    }
+                }
+
+                .clients-email {
+                    a {
+                        font-size: $font-size-h4;
+                    }
+                }
+            }
+
+            .clients-phone {
+                flex-direction: column;
+
+                a {
+                    font-size: $font-size-h3;
+                }
+            }
+        }
+    }
+}
+
+.search-card {
+
+    &__head {
+
+        .search-title {
+            width: 100%;
+
+            h4 {
+                cursor: pointer;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .search-more {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    position: relative;
+                    display: block;
+                    margin-left: 1rem;
+                    transition: transform $base-duration;
+
+                    svg {
+                       transition: all $base-duration;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        color: $secondary;
+                    }
+
+                    .search-more {
+                        transform: translateX(0.3rem);
+
+                        svg {
+                            fill: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__body {
+
+        .search-text {
+            width: 100%;
+        }
+    }
+}
+
+
+/* @end  */

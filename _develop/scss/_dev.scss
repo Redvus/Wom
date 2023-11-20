@@ -1,0 +1,19 @@
+/*! @group Neat Settings */
+/* ========================================================================== */
+@import "neat/neat-helpers";
+@import "neat/grid/media";
+
+$max-width: 1140px;
+$visual-grid: true;
+$visual-grid-color: #ccc;
+$visual-grid-index: back;
+$visual-grid-opacity: 0.3;
+
+$pad_g:     1024px;
+$pad_v:     768px;
+$mobile:    568px;
+
+$Large:     new-breakpoint(min-width $pad_g);
+$Medium:    new-breakpoint(max-width $pad_g);
+$XSmall:    new-breakpoint(max-width $pad_v, 8);
+$Small:     new-breakpoint(max-width $mobile, 4);

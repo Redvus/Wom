@@ -1,0 +1,373 @@
+/*==================================
+=            Nav Mobile            =
+==================================*/
+
+.nav {
+
+    &-main {
+        width: 100%;
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: $marginGlobal 0;
+
+        li {
+            width: 100%;
+            // height: 100%;
+            // padding: (calc(#{}$marginVert / 4) $navLinkPadding 0;
+            transition: all $base-duration;
+            z-index: 1;
+            overflow: hidden;
+
+            a {
+                width: 100%;
+                // height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font: {
+                    family: $heading-font;
+                    weight: 500;
+                };
+                color: $navLinkColor;
+                text-align: center;
+                // padding: $marginGlobal 0;
+                // background-color: $third;
+                // transition: all $base-duration;
+            }
+
+            &:hover {
+                overflow: visible;
+
+                a {
+                    color: $navColorHover;
+                    // background-color: $navBackgroundHover;
+                }
+            }
+        }
+
+        &__children {
+
+            > a {
+
+                svg#navCross {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    display: block;
+                    float: left;
+                    position: relative;
+                    margin-left: calc(#{$marginVert} / 4);
+                    transform: translateY(20%);
+
+                    #navCrossVert {
+                        fill: none;
+                        stroke: $secondary;
+                        stroke-width: 0.2rem;
+                        transform-origin: 50% 50%;
+                        transition: transform .2s;
+                    }
+
+                    #navCrossHorz {
+                        fill: none;
+                        stroke: $secondary;
+                        stroke-width: 0.2rem;
+                        transform-origin: 50% 50%;
+                        transition: transform .2s;
+                    }
+                }
+            }
+
+            ul.submenu {
+                width: 100%;
+                position: relative;
+                // top: $headerHeightDesktop;
+                padding: 0;
+                padding-inline-start: 0;
+                background-color: $navBackgroundHover;
+                // box-shadow: 0 0 0.2rem rgba($primary, 0.7);
+                transition: all $base-duration;
+                // display: none;
+                opacity: 0;
+                transform: translateY(-5%);
+                z-index: -1;
+
+                li {
+                    width: 100%;
+                    height: calc(#{$headerHeightDesktop} / 1.3);
+                    float: none;
+                    padding: 0;
+                    position: relative;
+                    cursor: pointer;
+                    transition: all $base-duration;
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                    }
+
+                    &.active {
+                        background-color: $navColorHover;
+
+                        a {
+                            color: $third;
+                            background-color: $navColorHover;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $navColorHover;
+
+                        &.active {
+
+
+                            a {
+                                color: $third;
+                                background-color: $navColorHover;
+                            }
+                        }
+
+                        a {
+                            color: $navColorHover;
+                            background-color: $navBackgroundHoverDark;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+
+
+                ul.submenu {
+                    display: block;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                > a {
+
+                    svg#navCross {
+
+                        #navCrossVert {
+                            transform: rotate(90deg);
+                        }
+
+                        #navCrossHorz {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &--mobile {
+            padding: 0;
+
+            .item-has-children {
+
+                > a {
+
+                    svg#navCross {
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        display: block;
+                        float: right;
+                        position: relative;
+                        margin-left: calc(#{$marginVert} / 2);
+                        margin-top: 0.2rem;
+                        transform: translateY(20%);
+
+                        #navCrossVert {
+                            fill: none;
+                            stroke: $primary;
+                            stroke-width: 0.2rem;
+                            transform-origin: 50% 50%;
+                            transition: transform .2s;
+                        }
+
+                        #navCrossHorz {
+                            fill: none;
+                            stroke: $primary;
+                            stroke-width: 0.2rem;
+                            transform-origin: 50% 50%;
+                            transition: transform .2s;
+                        }
+                    }
+                }
+
+                // &:hover {
+                //     > a {
+
+                //         svg#navCross {
+
+                //             #navCrossVert {
+                //                 transform: rotate(90deg);
+                //             }
+
+                //             #navCrossHorz {
+                //                 transform: rotate(360deg);
+                //             }
+                //         }
+                //     }
+                // }
+            }
+
+            ul.submenu {
+                padding: 0 0 0.5rem;
+                display: none;
+                border-bottom: $border_thin solid $navLinkColor;
+                //background-color: lighten($primary, 3%);
+
+                li {
+
+
+                    a {
+                        font-size: $font-size-large - 0.2;
+                        padding: 0.15rem 0;
+                    }
+                }
+
+                @include grid-media($Small) {
+                    padding: 0.5rem 0;
+
+                    li {
+
+                        a {
+                            padding: 0.5rem 0;
+                        }
+                    }
+                }
+            }
+
+            li {
+
+
+                a {
+                    width: 100%;
+                    display: inline-block;
+                    line-height: 1rem;
+                    padding: 0.5rem 0 0.5rem;
+                    color: $navLinkColor;
+                    font: {
+                        family: $heading-font;
+                        // size: $font-size-large;
+                    };
+                    transition: 0.3s ease-in-out;
+
+                    // .no-touch &:hover,
+                    // &:hover {
+                    //     //color: #FFF;
+                    //     //background-color: lighten($primary, 5%);
+                    //     //padding-left: 0.5rem;
+                    // }
+
+                    &.submenu-open {
+                        // background-color: $primary;
+                        // border-top: 0.15rem solid $filterBorderColor;
+
+                        .submenu {
+
+
+                            li {
+
+                                a {
+                                    font-size: $font-size-large - 0.2;
+                                }
+
+                                // a.active {
+                                //     //color: $fourth;
+                                // }
+                            }
+                        }
+
+
+                        svg#navCross {
+
+                            #navCrossVert {
+                                transform: rotate(90deg);
+                            }
+
+                            #navCrossHorz {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                    }
+                }
+
+                // &.current, &.active {
+
+
+                //     a {
+                //     	//color: $fourth;
+                //     }
+                // }
+            }
+        }
+    }
+
+
+    @include grid-media($XXLarge) {
+
+        &-mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($XLarge) {
+
+        &-mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($Large) {
+
+        &-mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($Medium) {
+
+        &-mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($XSmall) {
+
+        &-mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($Small) {
+
+        &-mobile {
+            display: flex;
+            visibility: visible;
+
+            &__mask {
+                display: block;
+                visibility: visible;
+            }
+        }
+
+        &-button {
+            display: flex;
+            visibility: visible;
+        }
+    }
+}
+
+/*=====  End of Nav Mobile  ======*/
+

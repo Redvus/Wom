@@ -1,0 +1,136 @@
+/*! @group Layout */
+/* ========================================================================== */
+.footer {
+    width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 4) - (#{$border_bold} / 2));
+    min-height: 2rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    // left: calc(#{$sidebarWidth} + (#{$sidebarPadding} * 2) + #{$sidebarBorder});
+    left: 0;
+    background-color: $third;
+    color: $secondary;
+    padding: calc(#{$sidebarPadding} / 2) $sidebarPadding;
+    display: none;
+    visibility: hidden;
+
+    &__copyright {
+        width: 40%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        min-height: 1rem;
+        font-size: $font-size-small;
+        text-align: right;
+
+        .counter {
+            width: 87px;
+            height: 31px;
+            display: block;
+            position: relative;
+            float: right;
+            margin-right: 1rem;
+        }
+    }
+
+    &__adress {
+        width: 60%;
+        font-size: $font-size-small;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $third;
+            }
+        }
+    }
+
+    .author {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+
+        p {
+            font: {
+                //family: $font-family-base;
+                size: $font-size-small;
+            };
+            color: #fff;
+            display: inline-block;
+        }
+
+        a {
+            margin-left: 10px;
+            margin-top: 7px;
+            display: inline-block;
+
+            svg {
+                width: 31px;
+                height: 31px;
+                fill: #fff;
+                transition: 0.2s;
+
+                &:hover {
+                    fill: $third;
+                }
+            }
+        }
+    }
+
+    @include grid-media($XSmall) {
+        text-align: center;
+    }
+
+    @include grid-media($Small) {
+        width: calc(100% - 2rem);
+        left: 0;
+        flex-direction: column;
+        padding: 1rem;
+        display: flex;
+        visibility: visible;
+
+        &__copyright {
+            width: 100%;
+            display: block;
+            min-height: 1rem;
+            font-size: $font-size-small;
+            text-align: center;
+        }
+
+        &__adress {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__counter {
+            width: 100%;
+        }
+    }
+}
+
+.footer-mobile {
+    display: none;
+    background-color: $third;
+    border-top: 0.3rem solid $secondary;
+    z-index: 9000;
+
+    h2 {
+        font-size: $font-size-h4;
+        color: $primary;
+    }
+
+    @include grid-media($Small) {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 1rem;
+        text-align: center;
+    }
+}
+/* @end  */

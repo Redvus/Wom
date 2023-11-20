@@ -1,0 +1,407 @@
+/*================================
+=            Variable            =
+================================*/
+
+$primary  : rgba(81,140,129, 1);
+$secondary: $primary; //rgba(217,121,113, 1)
+$third    : rgba(16,50,64, 1);
+$fourth   : rgba(242,230,216, 1);
+$five     : $primary;
+$six      : $primary; //rgba(226,141,38, 1)
+
+/* Color Theme Swatches in RGBA */
+$color-theme_Screenshot-2021-08-02-at-14-28-55-Colorido-Manchas-Feitas-à-Mão-Dia-das-Mães-Cartão-Animado-1-rgba: rgba(50,74,89, 1);
+$color-theme_Screenshot-2021-08-02-at-14-28-55-Colorido-Manchas-Feitas-à-Mão-Dia-das-Mães-Cartão-Animado-2-rgba: rgba(81,140,129, 1);
+$color-theme_Screenshot-2021-08-02-at-14-28-55-Colorido-Manchas-Feitas-à-Mão-Dia-das-Mães-Cartão-Animado-3-rgba: rgba(242,235,220, 1);
+$color-theme_Screenshot-2021-08-02-at-14-28-55-Colorido-Manchas-Feitas-à-Mão-Dia-das-Mães-Cartão-Animado-4-rgba: rgba(242,193,133, 1);
+$color-theme_Screenshot-2021-08-02-at-14-28-55-Colorido-Manchas-Feitas-à-Mão-Dia-das-Mães-Cartão-Animado-5-rgba: rgba(191,96,75, 1);
+
+$border_thin: 0.07rem;
+$border_normal: 0.15rem;
+$border_bold: 0.3rem;
+$border_heavy: 0.6rem;
+
+$error  : rgba(166,71,36, 1);
+$success: rgba(81,140,129, 1);
+$warning: rgba(217,121,113, 1);
+
+$black      : #003946;
+$dark-gray  : #4F7780;
+$middle-gray: #6996A0;
+$light-gray : #A3BCC2;
+
+$action-color: $fourth;
+
+$border        :  $border_normal solid $primary;
+$borderFocus   :  0.15rem solid $third;
+$borderError   :  0.15rem solid $error;
+
+$base-duration:     0.3s;
+$base-timing:       0.3s;
+
+/*=============================
+=            Media            =
+=============================*/
+
+$neat-grid: (
+    columns: 12,
+    gutter: 2rem
+);
+
+$imac27 : 2560px;
+$imac21 : 1920px;
+$cinema : 1680px;
+$pad_g  : 1024px;
+$pad_v  : 768px;
+$mobile : 570px;
+
+$XXLarge: (media: "(min-width: #{$imac21})");
+$XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac21})");
+$Large: (media: "(min-width: #{$pad_g}) and (max-width: #{$cinema})");
+$Medium: (media: "(max-width: #{$pad_g})");
+$XSmall: (media: "(max-width: #{$pad_v})");
+$Small: (media: "(max-width: #{$mobile})");
+$HSmall: (media: "(max-height: 420px)");
+$Landscape: (media: "(max-width: #{$pad_v}) and (orientation: landscape)");
+$XPortrait: (media: "(min-width: #{$pad_v}) and (max-width: #{$pad_g}) and (orientation: portrait)");
+
+/*=====  End of Media  ======*/
+
+$action-color: $secondary;
+
+// layout
+$mainContentWidth: 60rem;
+
+$sidebarWidth: 17rem;
+$sidebarPadding: 2rem;
+$sidebarBorder: 0.6rem;
+
+$backgroundColor : $third;
+$sidebarBackground: darken($backgroundColor, 2%);
+
+$border_thin: 0.07rem;
+$border_normal: 0.15rem;
+$border_bold: 0.3rem;
+$border_heavy: 0.6rem;
+
+$marginGlobal: 1rem;
+$marginVert: $marginGlobal * 2;
+$postPreviewImageWidth: 15rem;
+$postImageHeight: 22rem;
+$paddingMobile: 1rem;
+
+/*----------  Header  ----------*/
+$headerHeightDesktop  : 3rem;
+$headerBackgroundColor: $fourth;
+$headerNavWidth       : 40px;
+$headerBlindWidth     : calc(#{$headerHeightDesktop} + (#{$headerHeightDesktop} / 1.5));
+
+/*----------  Header Mobile  ----------*/
+$headerHeightMobile : 2rem;
+$headerPartWidthMobile : calc(100% / 3);
+$headerBackgroundMobile: $primary;
+
+/*----------  Nav  ----------*/
+$navPaddingMobile      : 2rem;
+$navLinkSizeMobile     : 6vw;
+$navBackground         : darken($primary, 10%);
+$navBackgroundHover    : darken($third, 5%);
+$navBackgroundHoverDark: darken($third, 10%);
+$navColorAfter         : $secondary;
+$navColorHover         : $fourth;
+$navLinkColor          : $secondary;
+$navLinkColorActive    : lighten($secondary, 15%);
+
+$navLinkPadding: calc(#{$marginVert} / 3);
+
+$navBackgroundMobile : $primary;
+$navLinkColorMobile : $fourth;
+
+@mixin rowMachine($numPerRow, $margin) {
+    width: calc((100% - ((#{$numPerRow} - 1) * #{$margin})) / #{$numPerRow});
+    display: inline-block;
+    // float: left;
+
+    &:nth-child(n) {
+        margin-bottom: $margin;
+        margin-right: $margin;
+        // padding-left: 0.8rem;
+        // padding-right: 0.4rem;
+        // margin-left: -$margin;
+    }
+
+    // &:first-child {
+    // 	margin-left: 0;
+    // }
+
+    &:nth-of-type(#{$numPerRow}n) {
+        margin-right: 0;
+        // margin-bottom: 0;
+    }
+
+    // @include grid-media($Medium) {
+    // 	&:nth-child(n) {
+    // 		margin-right: 0;
+    // 	}
+    // }
+
+    // @include grid-media($Small) {
+    // 	&:nth-child(n) {
+    // 		margin-right: -5px;
+    // 	}
+    // }
+}
+
+$base-duration:		0.3s;
+$base-timing:		0.3s;
+
+// @include font-face (
+//     "Glyphicons Halflings",
+//     "fonts/glyphicons-halflings-regular",
+//     ("eot", "woff", "ttf", "svg")
+//     ) {
+//     font-style: normal;
+//     font-weight: 400;
+// }
+
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap');
+
+/*! @group Fonts */
+/* ========================================================================== */
+$primary-font: "Avenir Next", sans-serif;
+$heading-font: 'Montserrat',  sans-serif;
+// $heading-font: 'Rubik',       sans-serif;
+
+$body-font-color:	lighten($six, 10%);
+
+$body-font-size:		1rem !default;
+$body-font-weight:		normal !default;
+$body-line-height:		1.4 !default;
+$heading-line-height:	1 !default;
+
+$bourbon: (
+    "modular-scale-base": $body-font-size,
+    "modular-scale-ratio": $major-third,
+);
+
+$font-size-base:	$body-font-size !default;
+$font-size-large:	$font-size-base + 0.2 !default; // ~18px
+$font-size-small:	$font-size-base - 0.2 !default; // ~14px
+
+$font-size-h1:      calc(#{$font-size-base} + 1.6vmax) !default; // ~3rem 48px modular-scale(6)
+$font-size-h2:      calc(#{$font-size-base} + 1.2vmax) !default; // ~2.5rem 40px modular-scale(5)
+$font-size-h3:      $font-size-large !default; // ~2rem 33px calc(#{$font-size-base} + 0.8vmax)
+$font-size-h4:      calc(#{$font-size-base} + 0.6vmax) !default; // ~1.728rem 28px
+$font-size-h5:      calc(#{$font-size-base} + 0.3vmax) !default; // ~1.44rem 23px
+$font-size-h6:      $font-size-base !default; // ~1.2rem 19px
+
+%px {
+    font: {
+        family: $primary-font;
+        weight: $body-font-weight;
+        size: $font-size-base;
+    };
+    line-height: $body-line-height;
+    color: $body-font-color;
+
+    @include grid-media($Medium) {
+        font-size: $font-size-large;
+    }
+
+    @include grid-media($XSmall) {
+        font-size: $font-size-large;
+    }
+
+    @include grid-media($Small) {
+        font-size: $font-size-large;
+    }
+}
+
+%hx {
+    font: {
+        family: $heading-font;
+        // weight: 400;
+    };
+    //letter-spacing: 0.04em;
+    line-height: $heading-line-height;
+    // text-transform: uppercase;
+    color: $secondary;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+body {
+    @extend %px;
+    margin: 0;
+    background-color: $backgroundColor;
+}
+
+h1 {
+    @extend %hx;
+    font-size: $font-size-h1;
+    //margin-bottom: 1em;
+    //text-align: center;
+    //transition: all .3s;
+}
+
+h2 {
+    @extend %hx;
+    font-size: $font-size-h2;
+
+    @include grid-media($XSmall) {
+        font-size: $font-size-h4;
+    }
+}
+
+h3 {
+    @extend %hx;
+    font-size: $font-size-h3;
+
+    @include grid-media($Small) {
+        font-size: $font-size-small;
+    }
+}
+
+h4 {
+    @extend %hx;
+    font-size: $font-size-h4;
+    margin-top: 0;
+}
+
+h5 {
+    @extend %hx;
+    font-size: $font-size-h5;
+}
+
+h6 {
+    @extend %hx;
+    font-size: $font-size-h6;
+}
+
+.large-text {
+    font-size: $font-size-large;
+}
+
+.small-text {
+    font-size: $font-size-small;
+}
+
+
+ul {
+    margin: 0;
+    list-style: none;
+
+    li {
+
+        @include grid-media($Medium) {
+            font-size: $font-size-large;
+        }
+    }
+}
+
+a {
+    display: inline-block;
+    // font-weight: bold;
+    color: $five;
+    text-decoration: none;
+    outline: none;
+    transition: all $base-duration;
+
+    &:active,
+    &:focus,
+    &:hover {
+        // text-decoration: underline;
+        // background-color: $primary;
+        color: $fourth;
+    }
+}
+
+p {
+    a {
+        color: $five;
+
+        &:hover,
+        &:active,
+        &:focus {
+            // background-color: $primary;
+            color: $five;
+        }
+
+        &:visited {
+            color: $five;
+        }
+    }
+}
+
+.hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.btn {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--search {
+        font-size: 1.5em;
+
+        &-close {
+            font-size: 3rem;
+            position: fixed;
+            z-index: 1001;
+            top: 1.25em;
+            right: 1.25em;
+            transition: opacity 0.1s;
+            transition-delay: 0.3s;
+        }
+    }
+
+    &--hidden {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+/* Icons */
+
+.icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    fill: $secondary;
+}
+
+.search__input {
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+/* @end  */
+
+/*! @group Mixins */
+/* ========================================================================== */
+@mixin flex-custom($flex-direction: row, $flex-align-items: center, $justify-content: center) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $flex-align-items;
+    justify-content: $justify-content;
+}
+/* @end  */

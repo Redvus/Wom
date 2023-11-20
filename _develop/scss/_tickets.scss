@@ -1,0 +1,260 @@
+/*! @group Search */
+/* ========================================================================== */
+.tickets-page {
+    display: block;
+    background-color: $third;
+    padding: 1rem 1rem 0;
+    margin-bottom: 2rem;
+
+    &__title {
+        margin-top: 0;
+
+        a {
+            font-size: $font-size-h4;
+            color: $secondary;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+    }
+
+    &__content {
+        //border-top: 1px solid $secondary;
+        //border-bottom: 1px solid $secondary;
+        background-color: lighten($third, 10%);
+        padding: 0.5rem 1rem;
+    }
+
+    .meta {
+        margin: 0.5rem 0 0;
+
+        &__more {
+            display: inline-block;
+            padding: 0.5em 1rem;
+            font-size: $font-size-small;
+            color: $secondary;
+            border: 1px solid $secondary;
+            margin: 1rem 0 0.7rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: $secondary;
+                transition: all 0.3s;
+                transform: translateY(-100%);
+            }
+
+            &:hover {
+                background-color: darken($third, 5%);
+                color: $primary;
+
+                &:after {
+                    transform: translateY(100%);
+                }
+            }
+        }
+
+        &__date {
+            display: inline-block;
+            padding: 0.5em 1rem;
+            margin: 1rem 0 0.7rem;
+            color: $secondary;
+            float: right;
+            font-size: $font-size-small;
+        }
+
+        &__view {
+            display: inline-block;
+            padding: 0.5em 0 0.5rem 1rem;
+            margin: 1rem 0 0.7rem;
+            color: $secondary;
+            float: right;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+.tickets-single-content {
+    margin: 2rem 0;
+}
+
+.loginza {
+
+    &-login {
+        padding: 0.5rem 1rem;
+        background-color: $third;
+        margin: 0.5rem 0;
+        @include flex-custom(row, center, space-between);
+        position: relative;
+
+        a {
+            display: inline-block;
+        }
+    }
+
+    &-logout {
+        padding: 0.5rem 1rem;
+        margin: 2rem 0;
+        background-color: $third;
+        min-height: 1rem;
+        overflow: auto;
+        @include flex-custom(row, center, space-between);
+        position: relative;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            margin-right: 1rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 1px solid $secondary;
+            color: $secondary;
+
+            &:hover {
+                background-color: darken($third, 5%);
+                color: $primary;
+            }
+        }
+    }
+}
+
+#comment-form {
+    padding: 1rem 2rem;
+    background-color: $third;
+
+    .form-group {
+
+        &-guest {
+            display: inline-block;
+            position: relative;
+            width: 30%;
+            margin: 1rem 1rem 1rem 0;
+
+            input {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                font-size: $font-size-base;
+            }
+        }
+    }
+
+    .form-actions {
+
+        &__preview {
+            display: inline-block;
+            padding: 0.5em 1rem;
+            font-size: $font-size-small;
+            color: $primary;
+            border: 1px solid $secondary;
+            background-color: $third;
+            margin: 0.5rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: darken($third, 5%);
+            }
+        }
+
+        &__submit {
+            display: inline-block;
+            padding: 0.5em 1rem;
+            font-size: $font-size-small;
+            color: $primary;
+            border: 1px solid $secondary;
+            background-color: $third;
+            //margin: 0.5rem;
+            box-sizing: border-box;
+            //float: right;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: darken($third, 5%);
+            }
+        }
+    }
+}
+
+.comment {
+
+    &-list {
+        padding: 0;
+    }
+
+    &-reply {
+        //background-color: $third;
+        padding: 0.5rem 0;
+        overflow: auto;
+
+        .reply,
+        .edit {
+            padding: 0.3rem 1rem;
+            background-color: darken($third, 7%);
+            //display: inline-block;
+            //border: 1px solid $secondary;
+            margin: 0.3rem 0;
+            font-size: $font-size-small;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: darken($third, 10%);
+            }
+        }
+    }
+}
+
+.ticket-comment {
+    background-color: $third;
+    padding: 1rem 1rem 0;
+    margin: 1rem 0;
+    overflow: auto;
+    //border: 1px solid $secondary;
+
+    .comments-list {
+        margin: 0 0 1rem;
+
+        .ticket-comment {
+            padding-right: 0;
+            padding-left: 0;
+            margin-top: 0;
+        }
+    }
+
+    &-header {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &-text {
+        //border-top: 1px solid $secondary;
+        //border-bottom: 1px solid $secondary;
+        background-color: lighten($third, 10%);
+        padding: 0.5rem 1rem;
+    }
+}
+/* @end  */

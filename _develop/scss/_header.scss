@@ -1,0 +1,331 @@
+/*! @group Header */
+/* ========================================================================== */
+.header {
+    width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$border_bold} / 2));
+    height: $headerHeightDesktop;
+    display: flex;
+    align-items: center;
+    // border-bottom: 5px solid $primary;
+    // left: calc(#{$sidebarWidth} + (#{$sidebarPadding} * 2) + #{$sidebarBorder});
+    left: 0;
+    top: 0;
+    position: fixed;
+    // overflow: hidden;
+    background-color: $third;
+    // box-shadow: 0 1rem 1rem darken($third, 2%);
+    z-index: 9000;
+
+    &__search {
+        @include flex-custom();
+        width: 60%;
+        height: 80px;
+        display: inline-block;
+        background-color: #ddd;
+    }
+
+    &__quest {
+        @include flex-custom();
+        width: 10%;
+        height: 80px;
+        display: inline-block;
+        background-color: #eee;
+    }
+
+    &__category {
+        @include flex-custom();
+        width: 10%;
+        height: 80px;
+        display: inline-block;
+        background-color: #ccc;
+    }
+
+    &--mobile {
+        width: calc(80% - (#{$marginVert} * 2));
+        height: calc(100vh - (#{$marginVert} * 2.5));
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding: ($marginVert * 2) $marginVert $marginVert;
+        background-color: darken($third, 5%);
+        z-index: 9997;
+        transform: translateX(100%);
+    }
+
+    &__button {
+        width: $headerHeightMobile + 1;
+        height: $headerHeightMobile + 1;
+        display: none;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        z-index: 9998;
+
+        .nav-button-line {
+            width: 50%;
+            height: $border_normal;
+            background-color: $primary;
+            position: absolute;
+            // transition: transform 0.3s;
+
+            &__top {
+                transform: translate(0, -300%);
+                transform-origin: 50% 50%;
+            }
+
+            &__middle {
+                transform-origin: 50% 50%;
+            }
+
+            &__bottom {
+                transform: translate(0, 300%);
+                transform-origin: 50% 50%;
+            }
+        }
+
+        &-search {
+            width: $headerHeightMobile + 1;
+            height: $headerHeightMobile + 1;
+            display: none;
+            visibility: hidden;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: $headerHeightMobile + 1;
+            cursor: pointer;
+            z-index: 9990;
+
+            i {
+                font-size: $font-size-large + 0.2;
+                color: $primary;
+            }
+        }
+
+        // &:hover {
+
+        // 	.nav-button-line {
+
+        // 		&__top {
+        // 			transform: translate(30%, 200%) rotate(135deg) scaleX(0.6);
+        // 		}
+
+        // 		&__middle {
+        // 			transform: rotate(180deg);
+        // 		}
+
+        // 		&__bottom {
+        // 			transform: translate(30%, -200%) rotate(-135deg) scaleX(0.6);
+        // 		}
+        // 	}
+        // }
+    }
+
+    &-back {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba($primary, 0.6);
+        z-index: 9996;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &-device,
+    &-device--pad {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $third;
+        position: fixed;
+        text-align: center;
+        z-index: 9999;
+        display: none;
+        visibility: hidden;
+
+        &__image {
+            width: 6rem;
+            display: block;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        span {
+            font-size: $font-size-small;
+        }
+    }
+
+    @include grid-media($XXLarge) {
+
+        &--mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($XLarge) {
+
+        &--mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($Large) {
+
+        &--mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($Medium) {
+
+        &--mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    @include grid-media($XSmall) {
+        display: none;
+        visibility: hidden;
+
+        &--mobile {
+            display: flex;
+            visibility: visible;
+        }
+
+        &__button {
+            display: flex;
+            visibility: visible;
+
+            &-search {
+                display: flex;
+                visibility: visible;
+            }
+        }
+    }
+
+    @include grid-media($Small) {
+        display: none;
+        visibility: hidden;
+
+        &--mobile {
+            display: flex;
+            visibility: visible;
+        }
+
+        &__button {
+            display: flex;
+            visibility: visible;
+
+            &-search {
+                display: flex;
+                visibility: visible;
+            }
+        }
+    }
+
+    @include grid-media($XPortrait) {
+
+        &-device {
+            display: none;
+            visibility: hidden;
+
+            &--pad {
+                display: flex;
+                visibility: visible;
+            }
+        }
+    }
+
+    // @include grid-media($Landscape) {
+
+    //     &-device {
+    //         display: flex;
+    //         visibility: visible;
+
+    //         &--pad {
+    //             display: none;
+    //             visibility: hidden;
+    //         }
+    //     }
+    // }
+}
+/* @end  */
+
+/*=============================================
+=                   Stop War                   =
+=============================================*/
+
+.event-top {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: #2E222A;
+    user-select: none;
+    opacity: 0;
+    display: none;
+    z-index: -1;
+
+    #stopwarTop {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        svg {
+            width: auto;
+            height: 25vh;
+            fill: #fff;
+        }
+    }
+
+    #stopwarMiddle {
+        width: 100%;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: auto;
+            height: 11.6vh;
+            fill: #FF4400;
+        }
+    }
+
+    #stopwarBottom {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        svg {
+            width: auto;
+            height: 25vh;
+            fill: #fff;
+        }
+    }
+}
+
+/*============  End of Stop War  =============*/

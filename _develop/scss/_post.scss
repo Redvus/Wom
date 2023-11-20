@@ -1,0 +1,765 @@
+/*! @group Post */
+/* ========================================================================== */
+
+.post {
+	width: 100%;
+	min-height: 6rem;
+	display: block;
+	float: left;
+	position: relative;
+
+	&-preview {
+		@include rowMachine(4, $marginGlobal);
+		overflow: hidden;
+		padding: 0;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+		white-space: nowrap;
+
+		&__image {
+			width: 100%;
+			height: calc(60vmax / 2.5);
+			display: block;
+			position: relative;
+			float: left;
+			overflow: hidden;
+
+			// &:before {
+			// 	content: '';
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	display: block;
+			// 	position: absolute;
+			// 	left: 0;
+			// 	top: 0;
+			// 	background-color: rgba($primary, 0.5);
+			// 	z-index: 0;
+			// 	opacity: 0;
+			// 	transition: opacity $base-duration;
+			// }
+
+			&:hover {
+
+				// &:before {
+				// 	opacity: 1;
+				// }
+
+				.post-preview__title {
+					// background-color: $primary;
+					opacity: 1;
+					transform: translateY(0);
+
+					// h3 {
+					// 	// color: $third;
+					// }
+				}
+			}
+		}
+
+		picture {
+			width: 100%;
+			height: 100%;
+			display: block;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: top center;
+			}
+		}
+
+		&__main {
+			width: calc(100% - #{$postPreviewImageWidth} - #{$marginGlobal});
+			min-height: $postPreviewImageWidth;
+			display: block;
+			position: relative;
+			float: left;
+			margin-left: $marginGlobal;
+		}
+
+		&__title {
+			width: calc(100% - (#{$marginGlobal} * 2));
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			// float: left;
+			padding: calc(#{$marginGlobal} / 2) $marginGlobal;
+			text-align: center;
+			background-color: $primary;
+			opacity: 0;
+			transform: translateY(15%);
+			transition: all ($base-duration - 0.1);
+			z-index: 1;
+
+			h3 {
+				color: $third;
+				white-space: normal;
+				transition: all $base-duration;
+			}
+		}
+
+		&__date {
+			width: 100%;
+			display: block;
+			border-top: $border_thin solid $secondary;
+			font-size: $font-size-small;
+			padding: 0.3rem 0;
+		}
+
+		&__bottom {
+			// margin-top: $marginGlobal;
+			position: absolute;
+			bottom: 0;
+		}
+
+		&__link {
+			position: absolute;
+			right: 0;
+			bottom: -$marginGlobal;
+			padding: 0.3rem 1rem 0.2rem;
+			background-color: $secondary;
+			color: $fourth;
+			text-align: center;
+			font-weight: normal;
+			font-size: $font-size-small;
+
+			&:hover {
+				color: $fourth;
+				background-color: $five;
+			}
+		}
+
+		@include grid-media($Medium) {
+			@include rowMachine(3, $marginGlobal);
+		}
+
+		@include grid-media($Small) {
+			@include rowMachine(2, $marginGlobal);
+			// flex-direction: column;
+			// margin-top: 1rem;
+
+			&__title {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			// &__image {
+			// 	width: 100%;
+			// 	height: 10rem;
+			// 	margin-bottom: calc(#{$marginGlobal} / 2);
+			// }
+
+			// &__main {
+			// 	width: 100%;
+			// 	min-height: $postPreviewImageWidth / 2;
+			// 	margin-left: 0;
+			// }
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: $postImageHeight;
+		display: block;
+		position: relative;
+		float: left;
+		margin-bottom: $marginGlobal;
+		overflow: hidden;
+		// background-position: 50% 50%;
+		// background-size: cover;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	&__main {
+		width: 100%;
+		min-height: $marginGlobal;
+		display: block;
+		position: relative;
+		float: left;
+	}
+
+	&__top {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: $marginGlobal;
+		// border-bottom: $border_thin solid $secondary;
+
+		a {
+			width: $marginGlobal * 2;
+			height: $marginGlobal * 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			i {
+				font-size: $font-size-large + 0.2;
+			}
+		}
+
+		h2 {
+			margin-top: 0;
+			margin-bottom: $marginGlobal;
+		}
+	}
+
+	&__adbanner {
+		// min-height: 0;
+		position: relative;
+		float: left;
+		margin: calc(#{$marginGlobal} / 2) 0 $marginGlobal;
+		overflow: hidden;
+
+		&--top {
+			margin: 0 0 calc(#{$marginGlobal} * 1.5);
+		}
+
+		&--bottom {
+			margin: 0 0 calc(#{$marginGlobal} * 0.5);
+		}
+
+		&--desktop {
+			width: 728px;
+			height: 90px;
+		}
+
+		&--tablet {
+			width: 728px;
+			height: 90px;
+		}
+
+		&--phone {
+			width: 320px;
+			height: 100px;
+			margin-left: -1rem;
+		}
+
+		&-inside {
+			position: relative;
+			float: right;
+			margin: calc(#{$marginGlobal} / 2) 0 $marginGlobal $marginGlobal;
+		}
+	}
+
+	&__date {
+		width: 100%;
+		display: block;
+		border-top: $border_thin solid $secondary;
+		font-size: $font-size-small;
+		padding: 0.3rem 0;
+	}
+
+	&__bottom {
+		margin-top: $marginGlobal;
+	}
+
+	&__tag {
+		display: inline-block;
+		padding: 0.2rem 0.8rem;
+		background-color: $primary;
+		color: $sidebarBackground;
+		position: relative;
+		font-size: $font-size-small;
+		font-weight: normal;
+		border-top-left-radius: 0.2rem;
+		border-bottom-left-radius: 0.2rem;
+		border-top-right-radius: 0.2rem;
+		border-bottom-right-radius: 0.2rem;
+		margin-right: 0.3rem;
+		transition: all 0.3s;
+
+		&:before {
+			content: "";
+			width: 0.5rem;
+			height: 0.5rem;
+			display: block;
+			background-color: $backgroundColor;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+
+		&:hover {
+			background-color: $five;
+		}
+	}
+
+	&__meta {
+		display: block;
+		margin: calc(#{$marginGlobal} / 2) 0;
+		padding: calc(#{$marginGlobal} / 2) 0;
+		border-top: $border_thin solid $secondary !important;
+		border-bottom: $border_thin solid $secondary !important;
+		color: $secondary;
+
+		span {
+			margin-right: $marginGlobal;
+		}
+	}
+
+	&-gallery {
+		width: 100%;
+		min-height: 10vh;
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		font-size: 0;
+
+		a {
+			@include rowMachine(6, 0.5rem);
+			height: calc(100vh / 4);
+			overflow: hidden;
+			padding: 0;
+			margin-block-start: 0;
+			margin-block-end: 0;
+			margin-inline-start: 0;
+			margin-inline-end: 0;
+			white-space: nowrap;
+
+
+			picture {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+				// filter: sepia(0.4);
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					object-position: center;
+					object-fit: cover;
+				}
+			}
+
+			// &:hover {
+
+			// 	a {
+			// 		filter: sepia(0);
+			// 	}
+			// }
+		}
+
+		@include grid-media($Small) {
+
+			a {
+				@include rowMachine(3, $marginGlobal);
+			}
+		}
+	}
+
+	&__image {
+
+		&--wide {
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: calc(#{$marginGlobal} / 1.5);
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-position: top center;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__description {
+		width: calc(100% - #{$marginGlobal});
+		display: block;
+		position: relative;
+		left: 0;
+		bottom: 0;
+		padding: calc(#{$marginGlobal} / 4) calc(#{$marginGlobal} / 2);
+		font-size: $font-size-small;
+		color: $secondary;
+		background-color: $third;
+	}
+
+	&-video {
+		@include rowMachine(2, 1rem);
+		min-height: calc((#{$mainContentWidth} / 4) + (#{$mainContentWidth} / 4));
+		overflow: hidden;
+		float: left;
+		padding: 0;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+
+		&__image {
+			width: 100%;
+			height: calc(#{$mainContentWidth} / 4);
+			display: block;
+			position: relative;
+			overflow: hidden;
+
+			picture {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+				// filter: sepia(0.4);
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					object-position: center;
+					object-fit: cover;
+				}
+			}
+
+			svg {
+				width: calc(#{$mainContentWidth} / 12);
+				height: calc(#{$mainContentWidth} / 12);
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transition: all 0.3s;
+				transform: translate(-40%, -50%);
+				z-index: 2;
+
+				path {
+					fill: rgba($backgroundColor, 0.7);
+					stroke: $backgroundColor;
+					stroke-width: $border_bold;
+				}
+			}
+
+			&:after {
+				content: "";
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: $secondary;
+				opacity: 0.2;
+				z-index: 1;
+				transition: all $base-duration;
+			}
+
+			&:hover {
+
+				svg {
+					transform: translate(-35%, -50%);
+
+					// path {
+					// 	// stroke: $fourth;
+					// 	fill: rgba($backgroundColor, 0.3);
+					// }
+				}
+
+				&:after {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		&__main {
+			width: calc(100% - 1rem);
+			min-height: calc((#{$mainContentWidth} / 4) - 2rem);
+			display: block;
+			padding: 1rem 1rem 1rem 0;
+
+			p {
+				font-size: $font-size-base;
+			}
+		}
+
+		&--full {
+			width: 100%;
+			display: block;
+			max-height: calc((70vw - #{$sidebarWidth}) / 2);
+			min-height: inherit;
+
+			.post-video__image {
+				height: calc((70vw - #{$sidebarWidth}) / 2);
+			}
+		}
+	}
+
+	&__middle {
+
+		a {
+
+			&:hover {
+				color: $secondary;
+			}
+
+			&:visited {
+				color: $five;
+			}
+		}
+	}
+
+	@include grid-media($XXLarge) {
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: block;
+				visibility: visible;
+			}
+
+			&--tablet {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--phone {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include grid-media($XLarge) {
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: block;
+				visibility: visible;
+			}
+
+			&--tablet {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--phone {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include grid-media($Large) {
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: block;
+				visibility: visible;
+			}
+
+			&--tablet {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--phone {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include grid-media($Medium) {
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--tablet {
+				display: block;
+				visibility: visible;
+			}
+
+			&--phone {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	@include grid-media($XSmall) {
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--tablet {
+				display: block;
+				visibility: visible;
+
+			}
+
+			&--phone {
+				display: none;
+				visibility: hidden;
+			}
+
+			&-inside {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&-preview {
+
+
+			&__image {
+				height: calc(60vmax / 2);
+			}
+		}
+	}
+
+	@include grid-media($Small) {
+
+		&__main {
+			width: 100%;
+		}
+
+		&__image {
+			height: 13rem;
+		}
+
+		&__adbanner {
+
+
+			&--desktop {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--tablet {
+				display: none;
+				visibility: hidden;
+			}
+
+			&--phone {
+				display: block;
+				visibility: visible;
+			}
+
+			&-inside {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&-gallery {
+
+			figure {
+				@include rowMachine(2, 0.5rem);
+			}
+		}
+
+		&-video {
+			@include rowMachine(1, 1rem);
+
+			&__image {
+				height: calc((100vw * 5) / 8);
+			}
+
+			&--full {
+				max-height: inherit;
+
+				.post-video__image {
+					height: inherit;
+				}
+			}
+		}
+	}
+}
+
+.pagination {
+	width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$border_bold} / 2));
+	height: $headerHeightDesktop;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: $font-size-base;
+	padding: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: $third;
+
+	li {
+		display: inline-block;
+		margin-right: 1rem;
+
+		&:hover {
+
+			a {
+				color: $primary;
+			}
+		}
+
+		&.active {
+
+			a {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.player {
+	--plyr-color-main: $secondary;
+}
+
+.neighbors {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+
+	&__link {
+		width: 40%;
+
+		&-next {
+			text-align: right;
+		}
+
+		&-up {
+			display: none;
+			visibility: hidden;
+		}
+
+		&:hover {
+
+			a {
+				color: $primary;
+			}
+		}
+	}
+}
+
+/* @end  */

@@ -1,0 +1,14 @@
+/*! @group Search */
+/* ========================================================================== */
+/* Layout for search container */
+.search {
+
+    &-content {
+
+        &__paging {
+            margin-top: ($marginGlobal * 1.5);
+        }
+    }
+}
+
+/* @end  */
