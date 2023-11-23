@@ -57,18 +57,16 @@
 		}
 	}
 
-	//@include grid-media($Large) {
-	//	width: 100%;
-	//	left: 0;
-	//}
-
-	// @include grid-media($XSmall) {
-
-
-	// }
+	@include grid-media($Large) {
+		width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$marginGlobal} * 2) - (#{$border_bold} / 2));
+		padding-left: $marginGlobal;
+		padding-right: $marginGlobal;
+	}
 
 	@include grid-media($Medium) {
-
+		width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$marginGlobal} * 2) - (#{$border_bold} / 2));
+		padding-left: $marginGlobal;
+		padding-right: $marginGlobal;
 
 		&-line {
 			display: none;

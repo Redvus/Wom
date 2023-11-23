@@ -583,6 +583,13 @@
 
 	@include grid-media($Medium) {
 
+		&-gallery {
+
+			a {
+				@include rowMachine(4, 0.5rem);
+			}
+		}
+
 		&__adbanner {
 
 

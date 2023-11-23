@@ -79,10 +79,11 @@
 
     &__nav {
         width: 100%;
-        height: calc(100% - (#{$marginGlobal} * 10));
+        height: calc(100% - (#{$marginGlobal} * 10) - (#{$marginGlobal} * 4));
         display: block;
         position: relative;
         overflow: auto;
+        padding: calc(#{$marginGlobal} * 2) 0;
     }
 
     .samples {
@@ -298,10 +299,10 @@
         }
     }
 
-    @include grid-media($Medium) {
-        display: none;
-        visibility: hidden;
-    }
+    //@include grid-media($Medium) {
+    //    display: none;
+    //    visibility: hidden;
+    //}
 
     // @include grid-media($XSmall) {
     //     padding: 2rem 1rem 1rem;
