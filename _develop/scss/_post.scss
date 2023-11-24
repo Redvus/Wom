@@ -321,7 +321,7 @@
 		font-size: 0;
 
 		a {
-			@include rowMachine(6, 0.5rem);
+			@include rowMachine(6, calc(#{$marginGlobal} / 2));
 			height: calc(100vh / 4);
 			overflow: hidden;
 			padding: 0;
@@ -330,7 +330,6 @@
 			margin-inline-start: 0;
 			margin-inline-end: 0;
 			white-space: nowrap;
-
 
 			picture {
 				width: 100%;
@@ -354,13 +353,6 @@
 			// 		filter: sepia(0);
 			// 	}
 			// }
-		}
-
-		@include grid-media($Small) {
-
-			a {
-				@include rowMachine(3, $marginGlobal);
-			}
 		}
 	}
 
@@ -586,7 +578,7 @@
 		&-gallery {
 
 			a {
-				@include rowMachine(4, 0.5rem);
+				@include rowMachine(4, calc(#{$marginGlobal} / 2));
 			}
 		}
 
@@ -611,6 +603,21 @@
 	}
 
 	@include grid-media($XSmall) {
+
+		&-gallery {
+
+			a {
+				@include rowMachine(4, calc(#{$marginGlobal} / 2));
+				height: calc(100vh / 4);
+
+				picture {
+
+					img {
+						object-position: top;
+					}
+				}
+			}
+		}
 
 		&__adbanner {
 
@@ -682,8 +689,15 @@
 
 		&-gallery {
 
-			figure {
-				@include rowMachine(2, 0.5rem);
+			a {
+				@include rowMachine(2, calc(#{$marginGlobal} / 2));
+
+				picture {
+
+					img {
+						object-position: top;
+					}
+				}
 			}
 		}
 

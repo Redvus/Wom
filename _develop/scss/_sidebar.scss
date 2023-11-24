@@ -299,31 +299,6 @@
         }
     }
 
-    //@include grid-media($Medium) {
-    //    display: none;
-    //    visibility: hidden;
-    //}
-
-    // @include grid-media($XSmall) {
-    //     padding: 2rem 1rem 1rem;
-
-    //     &__phone {
-    //         a {
-    //             font-size: $font-size-h5;
-    //         }
-    //     }
-
-    //     &__number {
-    //         display: none;
-    //         visibility: hidden;
-    //     }
-
-    //     &__banner {
-    //         display: none;
-    //         visibility: hidden;
-    //     }
-    // }
-
     @include grid-media($XSmall) {
         width: calc(100% - 2rem);
         height: $headerHeightMobile;
@@ -346,7 +321,7 @@
             padding: 0 0.5rem 0 0;
 
             svg {
-                width: inherit;
+                width: initial;
                 height: 100%;
             }
         }
@@ -395,6 +370,11 @@
         }
 
         &__copyright {
+            display: none;
+            visibility: hidden;
+        }
+
+        &__nav {
             display: none;
             visibility: hidden;
         }
