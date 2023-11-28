@@ -20,7 +20,7 @@
 
 		&__image {
 			width: 100%;
-			height: calc(60vmax / 2.5);
+			height: calc((60vmax / 4) * 1.618);
 			display: block;
 			position: relative;
 			float: left;
@@ -321,8 +321,8 @@
 		font-size: 0;
 
 		a {
-			@include rowMachine(6, calc(#{$marginGlobal} / 2));
-			height: calc(100vh / 4);
+			@include rowMachine(5, calc(#{$marginGlobal} / 2));
+			height: calc((#{$mainContentWidth} / 5) * 1.618);
 			overflow: hidden;
 			padding: 0;
 			margin-block-start: 0;
@@ -578,7 +578,8 @@
 		&-gallery {
 
 			a {
-				@include rowMachine(4, calc(#{$marginGlobal} / 2));
+				@include rowMachine(3, calc(#{$marginGlobal} / 2));
+				height: calc((100vw / 3) * 1.618);
 			}
 		}
 
@@ -608,7 +609,7 @@
 
 			a {
 				@include rowMachine(4, calc(#{$marginGlobal} / 2));
-				height: calc(100vh / 4);
+				height: calc((100vw / 4) * 1.618);
 
 				picture {
 
@@ -691,6 +692,7 @@
 
 			a {
 				@include rowMachine(2, calc(#{$marginGlobal} / 2));
+				height: calc((100vw / 2) * 1.618);
 
 				picture {
 
