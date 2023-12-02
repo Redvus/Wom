@@ -40,7 +40,8 @@
     }
 
     &--mobile {
-        width: calc(80% - (#{$marginVert} * 2));
+        width: calc(#{$sidebarWidth} - (#{$marginVert} * 2));
+        max-width: 60vw;
         height: calc(100vh - (#{$marginVert} * 2.5));
         position: fixed;
         right: 0;
