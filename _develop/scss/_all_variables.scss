@@ -96,6 +96,8 @@ $headerBackgroundColor: $fourth;
 $headerNavWidth       : 40px;
 $headerBlindWidth     : calc(#{$headerHeightDesktop} + (#{$headerHeightDesktop} / 1.5));
 
+$postTopHeight: 3.5958rem;
+
 /*----------  Header Mobile  ----------*/
 $headerHeightMobile : 2rem;
 $headerPartWidthMobile : calc(100% / 3);

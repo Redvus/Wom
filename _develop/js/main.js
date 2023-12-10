@@ -55,16 +55,46 @@
 
     /*============  End of SmoothScroll  =============*/
 
+    // Post Gallery Text
+    const buttonInfo = document.getElementById('postButtonInfo'),
+        postGalleryDescription = document.querySelector('.post-gallery__description'),
+        postGallery = document.querySelector('.post-gallery__images')
+    ;
+    function postGalleryText() {
+        let tl = gsap.timeline({reversed: true});
+
+        tl
+            .to(postGallery, {
+                duration: 0.3,
+                delay: "-0.3",
+                autoAlpha: 0
+            })
+            .to(postGalleryDescription, {
+                duration: 0.3,
+                delay: "-0.1",
+                display: "block",
+                autoAlpha: 1
+            })
+        ;
+
+        /*jshint -W030 */
+        buttonInfo.addEventListener("click", () => {
+            tl.reversed() ? tl.restart() : tl.reverse();
+        })
+    }
+
     function initPage() {
         // scrollSmooth();
         document.body.removeChild(headerBack);
         document.body.removeChild(searchBack);
+        if (buttonInfo) {
+            postGalleryText();
+        }
     }
 
     function initPageMobile() {
         navMenuOpenMobile();
         searchOpenMobile();
-
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {
