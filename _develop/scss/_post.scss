@@ -391,7 +391,7 @@
 			width: 100%;
 			min-height: 100vh;
 			position: relative;
-			color: $secondary;
+			color: lighten($secondary, 30%);
 			font-size: $font-size-base;
 			z-index: 0;
 			display: none;
@@ -657,7 +657,20 @@
 
 	@include grid-media($XSmall) {
 
+		&__top {
+			width: calc(100% - (#{$marginGlobal} * 2));
+			height: calc(#{$postTopHeightMobile} - #{$border_normal});
+			padding-top: calc(#{$marginGlobal} * 1.5);
+			top: calc(#{$marginGlobal} * 3);
+
+			a {
+				width: calc(#{$postTopHeightMobile} - (#{$border_normal} * 2));
+				height: calc(#{$postTopHeightMobile} - #{$border_normal});
+			}
+		}
+
 		&-gallery {
+			padding-top: calc(#{$postTopHeightMobile} + #{$border_normal} + (#{$marginGlobal}));
 
 			a {
 				@include rowMachine(4, $marginGlobal);
@@ -669,6 +682,10 @@
 						object-position: top;
 					}
 				}
+			}
+
+			&__description {
+				font-size: $font-size-large;
 			}
 		}
 

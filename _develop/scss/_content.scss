@@ -319,6 +319,10 @@
         &__preview {
             height: calc(40vmax - ((#{$headerHeightMobile} + (#{$sidebarPadding} * 1.5) + (#{$marginGlobal} * 0.3)) - #{$headerHeightMobile} / 2));
         }
+
+        &__list {
+            padding: calc(#{$postTopHeightMobile} + #{$border_normal} + (#{$marginGlobal})) 0 0;
+        }
     }
 }
 

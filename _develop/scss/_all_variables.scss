@@ -97,6 +97,7 @@ $headerNavWidth       : 40px;
 $headerBlindWidth     : calc(#{$headerHeightDesktop} + (#{$headerHeightDesktop} / 1.5));
 
 $postTopHeight: 3.5958rem;
+$postTopHeightMobile: 3rem;
 
 /*----------  Header Mobile  ----------*/
 $headerHeightMobile : 2rem;
@@ -214,10 +215,12 @@ $font-size-h6:      $font-size-base !default; // ~1.2rem 19px
 
     @include grid-media($XSmall) {
         font-size: $font-size-large;
+        color: $fourth;
     }
 
     @include grid-media($Small) {
         font-size: $font-size-large;
+        color: $fourth;
     }
 }
 
