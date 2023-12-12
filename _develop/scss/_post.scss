@@ -191,13 +191,17 @@
 	}
 
 	&__top {
-		width: 100%;
+		width: $mainContentWidth;
 		height: calc(#{$postTopHeight} - #{$border_normal});
 		display: flex;
+		position: fixed;
 		align-items: flex-start;
 		justify-content: space-between;
 		margin-bottom: $marginGlobal;
 		border-bottom: $border_normal solid $secondary;
+		background-color: $backgroundColor;
+		padding-top: calc(#{$sidebarPadding} + 0.5rem);
+		z-index: 10;
 
 		&_buttons {
 			display: flex;
@@ -335,11 +339,12 @@
 
 	&-gallery {
 		width: 100%;
-		min-height: 10vh;
+		min-height: 100vh;
 		display: flex;
 		flex-wrap: wrap;
 		position: relative;
 		font-size: 0;
+		padding-top: calc(#{$postTopHeight} + #{$border_normal} + (#{$marginVert} * 1.75));
 
 		a {
 			@include rowMachine(5, $marginGlobal);
@@ -376,15 +381,23 @@
 			// }
 		}
 
+		&__images {
+			width: 100%;
+			display: block;
+			position: relative;
+		}
+
 		&__description {
 			width: 100%;
-			min-height: 10vh;
-			position: absolute;
+			min-height: 100vh;
+			position: relative;
 			color: $secondary;
 			font-size: $font-size-base;
 			z-index: 0;
 			display: none;
 			visibility: hidden;
+			top: 0;
+			//padding-top: calc(#{$postTopHeight} + #{$border_normal} + (#{$marginVert} * 1.75));
 
 			p {
 
@@ -758,6 +771,14 @@
 			}
 		}
 	}
+}
+
+.active {
+	background-color: $secondary;
+}
+
+.fa-active {
+	color: $third !important;
 }
 
 .pagination {

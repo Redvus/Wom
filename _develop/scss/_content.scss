@@ -105,7 +105,7 @@
         width: 100%;
         display: block;
         position: relative;
-        padding: 0;
+        padding: calc(#{$postTopHeight} + #{$border_normal} + (#{$marginVert} * 1.75)) 0 0;
         margin: 0;
     }
 

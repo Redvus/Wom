@@ -5,7 +5,7 @@
     min-height: 100vh;
     display: block;
     position: relative;
-    padding: calc(#{$sidebarPadding} + 0.5rem) 0 ($headerHeightDesktop * 2);
+    padding: 0 0 ($headerHeightDesktop * 2);
     // right: calc(#{$sidebarWidth} + (#{$sidebarPadding} * 2) + #{$sidebarBorder});
     overflow: auto;
     // animation: fadeIn 2s $ease-out-quad;

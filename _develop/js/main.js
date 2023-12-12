@@ -58,21 +58,32 @@
     // Post Gallery Text
     const buttonInfo = document.getElementById('postButtonInfo'),
         postGalleryDescription = document.querySelector('.post-gallery__description'),
-        postGallery = document.querySelector('.post-gallery__images')
+        postGallery = document.querySelector('.post-gallery__images'),
+        postButtonInfoIcon = document.getElementById('postButtonInfoIcon')
     ;
     function postGalleryText() {
-        let tl = gsap.timeline({reversed: true});
+        let tl = gsap.timeline({
+            reversed: true,
+            onComplete: () => {
+                buttonInfo.className = 'active';
+                postButtonInfoIcon.className = 'fa-solid fa-close fa-active';
+            }
+        });
 
         tl
             .to(postGallery, {
                 duration: 0.3,
                 delay: "-0.3",
+                display: "none",
+                // position: "absolute",
+                // height: 0,
                 autoAlpha: 0
             })
             .to(postGalleryDescription, {
                 duration: 0.3,
                 delay: "-0.1",
                 display: "block",
+                // position: "relative",
                 autoAlpha: 1
             })
         ;
@@ -80,6 +91,8 @@
         /*jshint -W030 */
         buttonInfo.addEventListener("click", () => {
             tl.reversed() ? tl.restart() : tl.reverse();
+            buttonInfo.className = '';
+            postButtonInfoIcon.className = 'fa-solid fa-info';
         })
     }
 
@@ -95,6 +108,9 @@
     function initPageMobile() {
         navMenuOpenMobile();
         searchOpenMobile();
+        if (buttonInfo) {
+            postGalleryText();
+        }
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {
