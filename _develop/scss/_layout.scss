@@ -20,6 +20,21 @@
 		position: fixed;
 	}
 
+	&__iframe {
+		width: 100%;
+		height: max-content;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		top: 0;
+		left: 0;
+
+		p {
+			font-size: $font-size-base;
+			color: lighten($secondary, 30%);
+		}
+	}
+
     //&:after {
 	//    content: '';
 	//    position: absolute;

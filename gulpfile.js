@@ -72,6 +72,7 @@ gulp.task('main-js', function(){
 	return gulp.src([
 		path.src.js + 'nav.js',
 		path.src.js + 'search.js',
+		path.src.js + 'InfoImage.js',
 		path.src.js + 'main.js'
 	])
 	.pipe(concat('main.js'))
@@ -173,7 +174,10 @@ gulp.task('watch', function() {
 	gulp.watch(path.watch.scss + '*.scss', gulp.series('main-scss'));
 	gulp.watch(path.watch.scss + 'login.scss', gulp.series('login-scss'));
 	gulp.watch(path.watch.js + 'vendor.js', gulp.series('vendor-js'));
-	gulp.watch([path.watch.js + 'main.js', path.watch.js + 'nav.js', path.watch.js + 'search.js'], gulp.series('main-js'));
+	gulp.watch([path.watch.js + 'main.js',
+		path.watch.js + 'nav.js',
+		path.watch.js + 'InfoImage.js',
+		path.watch.js + 'search.js'], gulp.series('main-js'));
 	gulp.watch(path.watch.js + 'postGallery.js', gulp.series('postGallery-js'));
 	gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
 	gulp.watch(path.watch.js + 'process.js', gulp.series('process-js'));
