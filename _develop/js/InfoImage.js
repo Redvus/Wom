@@ -10,8 +10,6 @@ class InfoImage {
             wrapper = document.querySelector('.wrapper')
         ;
 
-        let currentPosition = window.pageYOffset;
-
         function postGalleryText() {
             let tl = gsap.timeline({
                 reversed: true,
@@ -48,6 +46,8 @@ class InfoImage {
             /*jshint -W030 */
             infoImageStoryID.addEventListener("click", () => {
                 tl.reversed() ? tl.restart() : tl.reverse();
+                let currentPosition = window.pageYOffset;
+                localStorage.setItem('windowPositionY', JSON.stringify(currentPosition));
                 window.scroll(0, 0);
             });
 
@@ -56,7 +56,8 @@ class InfoImage {
                 postTopButton.removeChild(buttonClose);
                 postGalleryDescription.innerHTML = '';
                 postGallery.removeChild(postGalleryDescription);
-                window.scroll(0, currentPosition);
+                let currentPositionY = JSON.parse(localStorage.getItem('windowPositionY'));
+                window.scroll(0, currentPositionY);
             });
         }
         postGalleryText();

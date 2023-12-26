@@ -61,6 +61,9 @@
         postGallery = document.querySelector('.post-gallery__images'),
         postButtonInfoIcon = document.getElementById('postButtonInfoIcon')
     ;
+
+    let currentPosition = window.pageYOffset;
+
     function postGalleryText() {
         let tl = gsap.timeline({
             reversed: true,
@@ -93,6 +96,7 @@
             tl.reversed() ? tl.restart() : tl.reverse();
             buttonInfo.className = '';
             postButtonInfoIcon.className = 'fa-solid fa-info';
+            window.scroll(0, 0);
         })
     }
 
