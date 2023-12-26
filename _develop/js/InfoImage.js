@@ -7,9 +7,10 @@ class InfoImage {
             iframeEl = document.createElement('iframe'),
             buttonClose = document.createElement('a'),
             postTopButton = document.querySelector('.post__top_buttons'),
-            wrapper = document.querySelector('.wrapper'),
-            currentPosition = wrapper.pageY;
+            wrapper = document.querySelector('.wrapper')
         ;
+
+        let currentPosition = window.pageYOffset;
 
         function postGalleryText() {
             let tl = gsap.timeline({
@@ -47,9 +48,7 @@ class InfoImage {
             /*jshint -W030 */
             infoImageStoryID.addEventListener("click", () => {
                 tl.reversed() ? tl.restart() : tl.reverse();
-                // if (currentPosition > 0) {
-                //     wrapper.scrollTop = 0;
-                // }
+                window.scroll(0, 0);
             });
 
             buttonClose.addEventListener("click", () => {
@@ -57,6 +56,7 @@ class InfoImage {
                 postTopButton.removeChild(buttonClose);
                 postGalleryDescription.innerHTML = '';
                 postGallery.removeChild(postGalleryDescription);
+                window.scroll(0, currentPosition);
             });
         }
         postGalleryText();
