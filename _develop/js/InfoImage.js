@@ -6,7 +6,9 @@ class InfoImage {
             postGalleryImages = document.querySelector('.post-gallery__images'),
             iframeEl = document.createElement('iframe'),
             buttonClose = document.createElement('a'),
-            postTopButton = document.querySelector('.post__top_buttons')
+            postTopButton = document.querySelector('.post__top_buttons'),
+            wrapper = document.querySelector('.wrapper'),
+            currentPosition = wrapper.pageY;
         ;
 
         function postGalleryText() {
@@ -18,11 +20,12 @@ class InfoImage {
                     buttonClose.innerHTML = '<i class="fa-solid fa-close"></i>';
                     postGalleryDescription.className = 'post-gallery__description';
                     buttonClose.className = 'post__top_close';
-                    postGalleryDescription.appendChild(iframeEl);
-                    iframeEl.src = `${infoImageStoryLink}`;
-                    iframeEl.onload = () => {
-                        iframeEl.contentDocument;
-                    };
+                    postGalleryDescription.innerHTML = infoImageStoryLink;
+                    // postGalleryDescription.appendChild(iframeEl);
+                    // iframeEl.src = `${infoImageStoryLink}`;
+                    // iframeEl.onload = () => {
+                    //     iframeEl.contentDocument;
+                    // };
                 }
             });
 
@@ -44,11 +47,16 @@ class InfoImage {
             /*jshint -W030 */
             infoImageStoryID.addEventListener("click", () => {
                 tl.reversed() ? tl.restart() : tl.reverse();
+                // if (currentPosition > 0) {
+                //     wrapper.scrollTop = 0;
+                // }
             });
 
             buttonClose.addEventListener("click", () => {
                 tl.reverse();
                 postTopButton.removeChild(buttonClose);
+                postGalleryDescription.innerHTML = '';
+                postGallery.removeChild(postGalleryDescription);
             });
         }
         postGalleryText();
