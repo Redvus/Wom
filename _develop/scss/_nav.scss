@@ -307,6 +307,13 @@
                 // }
             }
         }
+
+        &--active {
+
+            a {
+                color: lighten($secondary, 30%) !important;
+            }
+        }
     }
 
 

@@ -51,7 +51,7 @@ $neat-grid: (
 $imac27 : 2560px;
 $imac21 : 1920px;
 $cinema : 1680px;
-$pad_g  : 1024px;
+$pad_g  : 1090px;
 $pad_v  : 768px;
 $mobile : 570px;
 
@@ -264,8 +264,8 @@ h3 {
     @extend %hx;
     font-size: $font-size-h3;
 
-    @include grid-media($Small) {
-        font-size: $font-size-small;
+    @include grid-media($XSmall) {
+        font-size: $font-size-base;
     }
 }
 

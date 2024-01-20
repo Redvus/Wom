@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "SSH FS - Wom",
+			"uri": "ssh://wom/var/www/womuscle.com/html/assets/components/_elements"
+		}
+	],
+	"settings": {
+		"sshfs.configs": [
+			{
+				"name": "wom",
+				"label": "Wom",
+				"host": "176.57.215.214",
+				"root": "/var/www/womuscle.com/html/assets/components/_elements",
+				"username": "redvus",
+				"password": "puMP(kin)jui47CE",
+				"sftpSudo": true
+			}
+		]
+	}
+}

@@ -57,7 +57,9 @@ class InfoImage {
                 postGalleryDescription.innerHTML = '';
                 postGallery.removeChild(postGalleryDescription);
                 let currentPositionY = JSON.parse(localStorage.getItem('windowPositionY'));
-                window.scroll(0, currentPositionY);
+                console.log(currentPositionY);
+                // window.scrollBy(0, window.pageYOffset + currentPositionY);
+                window.pageYOffset = currentPositionY;
             });
         }
         postGalleryText();
