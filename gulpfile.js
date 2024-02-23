@@ -73,6 +73,7 @@ gulp.task('main-js', function(){
 		path.src.js + 'nav.js',
 		path.src.js + 'search.js',
 		path.src.js + 'InfoImage.js',
+		path.src.js + 'yatranslate.js',
 		path.src.js + 'main.js'
 	])
 	.pipe(concat('main.js'))
@@ -177,6 +178,7 @@ gulp.task('watch', function() {
 	gulp.watch([path.watch.js + 'main.js',
 		path.watch.js + 'nav.js',
 		path.watch.js + 'InfoImage.js',
+		path.watch.js + 'yatranslate.js',
 		path.watch.js + 'search.js'], gulp.series('main-js'));
 	gulp.watch(path.watch.js + 'postGallery.js', gulp.series('postGallery-js'));
 	gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
