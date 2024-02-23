@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="d3006cb6-d902-490d-a886-c2ff2cf8b82a" name="Bench">
+        <fileTransfer rootFolder="/mnt/disk2/site_dev/bm2022.redvus.ru/html" accessType="SFTP" host="176.57.215.214" port="22" sshConfigId="0514850a-5899-4001-b25d-684395e6219e" sshConfig="redvus@176.57.215.214:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
