@@ -14,6 +14,17 @@
     //     display: block;
     // }
 
+    &--intro {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        margin: 0;
+
+        .main-content__preview {
+            height: 50vh;
+        }
+    }
+
     &__breadcrumbs {
         width: 100%;
         padding: 0 0 $sidebarPadding;

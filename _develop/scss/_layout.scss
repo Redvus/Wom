@@ -11,10 +11,13 @@
     // animation: fadeIn 2s $ease-out-quad;
 
 	&--intro {
-		width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$border_bold} / 2));
-		height: calc(100vh - ((#{$sidebarPadding} + 0.5rem) * 2));
+		//width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2) - (#{$border_bold} / 2));
+		//height: calc(100vh - ((#{$sidebarPadding} + 0.5rem) * 2));
+		width: calc(100% - #{$sidebarWidth} - (#{$sidebarPadding} * 2));
+		height: 100vh;
 		display: block;
-		padding: calc(#{$sidebarPadding} + 0.5rem) 0 ($headerHeightDesktop * 2);
+		//padding: calc(#{$sidebarPadding} + 0.5rem) 0 ($headerHeightDesktop * 2);
+		padding: 0;
 		min-height: 50vh;
 		overflow: hidden;
 		position: fixed;
