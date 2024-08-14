@@ -4,20 +4,20 @@
 			"path": "."
 		},
 		{
-			"name": "SSH FS - Wom",
-			"uri": "ssh://wom/var/www/womuscle.com/html/assets/components/_elements"
+			"name": "SSH FS - wom",
+			"uri": "ssh://wom/mnt/disk2/site_archive/womuscle.com/html/assets"
 		}
 	],
 	"settings": {
 		"sshfs.configs": [
 			{
 				"name": "wom",
-				"label": "Wom",
+				"label": "wom",
 				"host": "176.57.215.214",
-				"root": "/var/www/womuscle.com/html/assets/components/_elements",
 				"username": "redvus",
-				"password": "puMP(kin)jui47CE",
-				"sftpSudo": true
+				"sftpSudo": true,
+				"password": "pumP(kin)jui!52cE",
+				"root": "/mnt/disk2/site_archive/womuscle.com/html/assets/"
 			}
 		]
 	}
