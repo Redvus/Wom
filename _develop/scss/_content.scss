@@ -299,7 +299,7 @@
         margin-top: 0;
         margin-bottom: ($marginGlobal * 2);
         color: $primary;
-    }
+    } 
 
     @include grid-media($Large) {
         width: 100%;
@@ -325,11 +325,14 @@
             picture {
                 width: calc(100vw / 4);
             }
-        }
+        } 
 
-        &__preview {
-            height: calc(50vmax - ((#{$headerHeightMobile} + (#{$sidebarPadding} * 1.5) + (#{$marginGlobal} * 0.3)) - #{$headerHeightMobile} / 2));
-        }
+        &--intro {
+
+            .main-content__preview {
+                height: calc(50vmax - ((#{$headerHeightMobile} + (#{$sidebarPadding} * 2) + (#{$marginGlobal} * 0.3)) - #{$headerHeightMobile} / 2));
+            }
+        }         
 
         &__list {
             padding: calc(#{$postTopHeightMobile} + #{$border_normal} + (#{$marginGlobal})) 0 0;

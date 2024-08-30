@@ -2,11 +2,13 @@
 =                   Mobile Search                   =
 ===================================================*/
 
-const searchButtonMobile = document.getElementById('headerButtonSearch'),
+const 
+    searchButtonMobile = document.getElementById('headerButtonSearch'),
     sidebarLogoMobile = document.querySelector('.sidebar__logo'),
     sidebarSearchMobile = document.querySelector('.sidebar__search'),
     sidebarSearchWrapper = document.querySelector('.wrapper'),
-    searchBack = document.getElementById('searchBack')
+    searchBack = document.getElementById('searchBack'),
+    langBlock = document.querySelector('.lang')
 ;
 
 function searchOpenMobile() {
@@ -14,7 +16,7 @@ function searchOpenMobile() {
     var tl = new gsap.timeline({reversed: true});
 
     tl
-        .to([sidebarLogoMobile, navButtonMobile, searchButtonMobile], {
+        .to([sidebarLogoMobile, navButtonMobile, searchButtonMobile, langBlock], {
             duration: 0.1,
             delay: -1,
             autoAlpha: 0,
@@ -27,6 +29,7 @@ function searchOpenMobile() {
             y: '0%',
             visibility: 'visible',
             autoAlpha: 1,
+            zIndex: 11,
             ease: 'power2'
         })
         .to(searchBack, {
@@ -35,7 +38,6 @@ function searchOpenMobile() {
             autoAlpha: 1,
             // y: '3rem',
             visibility: 'visible',
-            // zIndex: 9000,
             ease: 'power1'
         })
     ;
