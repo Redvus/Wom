@@ -59,7 +59,7 @@ class InfoImage {
                 let currentPositionY = JSON.parse(localStorage.getItem('windowPositionY'));
                 console.log(currentPositionY);
                 // window.scrollBy(0, window.pageYOffset + currentPositionY);
-                window.pageYOffset = currentPositionY;
+                // window.pageYOffset = currentPositionY;
             });
         }
         postGalleryText();
