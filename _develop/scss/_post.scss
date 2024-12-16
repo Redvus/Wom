@@ -356,7 +356,7 @@
 		flex-wrap: wrap;
 		position: relative;
 		font-size: 0;
-		padding-top: calc(#{$postTopHeight} + #{$border_normal} + (#{$marginVert} * 1.75));
+		// padding-top: calc(#{$postTopHeight} + #{$border_normal} + (#{$marginVert} * 1.75));
 
 		&__images {
 			width: 100%;
